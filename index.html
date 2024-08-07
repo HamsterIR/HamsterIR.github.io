@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Promo Code Generator</title>
+    <title>کلیدساز همستر</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Game Promo Code Generator</h1>
+        <h1>کلیدساز همستر</h1>
         <div class="form-group">
-            <label for="gameSelect">Select Game:</label>
+            <label for="gameSelect">بازی را انتخاب کنید</label>
             <select id="gameSelect">
                 <option value="1">Riding Extreme 3D</option>
                 <option value="2">Chain Cube 2048</option>
@@ -19,37 +19,42 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="keyCountSelect">Select Number of Keys:</label>
+            <label for="keyCountSelect">تعداد کلید را انتخاب کتید</label>
             <select id="keyCountSelect">
                 <option value="1">1</option>
                 <option value="5">5</option>
             </select>
         </div>
-        <button id="startBtn">Generate Keys</button>
+        <button id="startBtn">ساخت کلید</button>
 
         <div id="progressContainer" class="hidden">
             <div class="progress-bar">
                 <div id="progressBar"></div>
             </div>
             <p id="progressText">0%</p>
-            <p id="progressLog">Starting...</p>
+            <p id="progressLog">... در حال ساخت کلید</p>
         </div>
 
         <div id="keyContainer" class="hidden">
-            <h2 id="generatedKeysTitle" class="hidden">Generated Keys</h2>
+            <h2 id="generatedKeysTitle" class="hidden">کلید های ساخته شده</h2>
             <div id="keysList"></div>
-            <button id="copyAllBtn" class="hidden">Copy All Keys</button>
+            <button id="copyAllBtn" class="hidden">کپی تمام کلید ها</button>
         </div>
 
-        <p id="keyCountLabel">Number of keys:</p>
+        <p id="keyCountLabel">تعداد کلید ها</p>
 
-        <button id="generateMoreBtn">Generate More Keys</button>
-        <button id="creatorChannelBtn">Contact Creator</button>
-        <p id="copyStatus" class="hidden">Keys copied to clipboard!</p>
+        <button id="generateMoreBtn">ساخت کلید های دیگر</button>
+        <button id="creatorChannelBtn">عضویت در کانال</button>
+        <p id="copyStatus" class="hidden">کد کلید با موفقیت کپی شد</p>
         
         <div class="footer">
-            <p>Disclaimer: This tool is for educational purposes only. Use responsibly.</p>
-            <button id="telegramChannelBtn">Check out Our Telegram Channel</button>
+            <p>برای دریافت کلید های ویژه در کانال تلگرام عضو شوید</p>
+            <a href="https://t.me/AkhbarHamster" target="_blank">
+                <button>عضویت در کانال تلگرام</button>
+              </a>
+            
+            
+            <button id="telegramChannelBtn">عضویت در کانال</button>
         </div>
     </div>
 
