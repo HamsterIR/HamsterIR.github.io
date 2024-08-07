@@ -7,15 +7,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- The popup container -->
+<div id="my-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 10px; text-align: center;">
+    <!-- The popup content -->
+    <h2 style="margin-top: 0;">توجه</h2>
+    <p>برای دریافت رایگان و نامحدود کلیک</p>
+    <p>باید در کانال تلگرام عضو باشید</p>
+    <!-- The close button -->
+    <button id="my-popup-close-btn" style="background-color: #ccc; color: #fff; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;">×</button>
+    <!-- The button to open a link -->
+    <button id="my-popup-link-btn" style="background-color: #2278ce; color: #fff; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;">Open Link</button>
+  </div>
+
+  <!-- The JavaScript code -->
+  <script>
+    // Add an event listener to the close button
+    document.getElementById("my-popup-close-btn").addEventListener("click", function() {
+      // Hide the popup when the close button is clicked
+      document.getElementById("my-popup").style.display = "none";
+    });
+  
+    // Add an event listener to the link button
+    document.getElementById("my-popup-link-btn").addEventListener("click", function() {
+      // Open the link when the button is clicked
+      window.open("https://t.me/AkhbarHamster", "_blank");
+    });
+
+    // Show the popup
+    document.getElementById("my-popup").style.display = "block";
+  </script>
+
+
     <div class="container">
         <h1>کلیدساز همستر</h1>
         <div class="form-group">
             <label for="gameSelect">بازی را انتخاب کنید</label>
             <select id="gameSelect">
-                <option value="1">Riding Extreme 3D</option>
-                <option value="2">Chain Cube 2048</option>
-                <option value="3">My Clone Army</option>
-                <option value="4">Train Miner</option>
+                <option value="1">Riding Extreme 3D | دوچرخه</option>
+                <option value="2">Chain Cube 2048 | مکعب زنجیره ای</option>
+                <option value="3">My Clone Army | ارتش کلون</option>
+                <option value="4">Train Miner | معدنچی قطار</option>
             </select>
         </div>
         <div class="form-group">
@@ -52,9 +83,6 @@
             <a href="https://t.me/AkhbarHamster" target="_blank">
                 <button>عضویت در کانال تلگرام</button>
               </a>
-            
-            
-            <button id="telegramChannelBtn">عضویت در کانال</button>
         </div>
     </div>
 
