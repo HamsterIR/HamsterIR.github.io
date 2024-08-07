@@ -7,41 +7,88 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- The popup container -->
-<div id="my-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 10px; text-align: center;">
-    <!-- The popup content -->
-    <h2 style="margin-top: 0;">توجه</h2>
-    <p>برای دریافت رایگان و نامحدود کلیک</p>
-    <p>باید در کانال تلگرام عضو باشید</p>
-    <!-- The close button -->
-    <button id="my-popup-close-btn" style="background-color: #ccc; color: #fff; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;">×</button>
-    <!-- The button to open a link -->
-    <button id="my-popup-link-btn" style="background-color: #2278ce; color: #fff; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;">Open Link</button>
-  </div>
 
-  <!-- The JavaScript code -->
-  <script>
-    // Add an event listener to the close button
-    document.getElementById("my-popup-close-btn").addEventListener("click", function() {
-      // Hide the popup when the close button is clicked
-      document.getElementById("my-popup").style.display = "none";
-    });
-  
-    // Add an event listener to the link button
-    document.getElementById("my-popup-link-btn").addEventListener("click", function() {
-      // Open the link when the button is clicked
-      window.open("https://t.me/AkhbarHamster", "_blank");
-    });
+  <style>
+    /* Style the popup container */
+    .popup-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
-    // Show the popup
-    document.getElementById("my-popup").style.display = "block";
-  </script>
+    /* Style the popup content */
+    .popup-content {
+      background-color: #040404;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      width: 300px;
+      text-align: center;
+    }
+
+    /* Style the close button */
+    .close-btn {
+      background-color: #ccc;
+      color: #333;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      background-color: #aaa;
+    }
+
+    /* Style the link button */
+    .link-btn {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .link-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+    </head>
+    <body>
+      <!-- The popup container -->
+      <div class="popup-container" style="display: none;">
+        <!-- The popup content -->
+        <div class="popup-content">
+          <h2>Popup Title</h2>
+          <p>This is the popup content.</p>
+          <!-- The close button -->
+          <button class="close-btn" onclick="document.querySelector('.popup-container').style.display = 'none';">Close</button>
+          <!-- The link button -->
+          <a href="https://t.me/AkhbarHamster" target="_blank">
+            <button class="link-btn">عضویت در کانال</button>
+          </a>
+        </div>
+      </div>
+    
+      <script>
+        // Show the popup when the page loads
+        window.onload = () => {
+          document.querySelector('.popup-container').style.display = 'flex';
+        };
+      </script>
 
 
     <div class="container">
         <h1>کلیدساز همستر</h1>
         <div class="form-group">
-            <label for="gameSelect">بازی را انتخاب کنید</label>
+            <label for="gameSelect">:انتخاب بازی</label>
             <select id="gameSelect">
                 <option value="1">Riding Extreme 3D | دوچرخه</option>
                 <option value="2">Chain Cube 2048 | مکعب زنجیره ای</option>
@@ -50,39 +97,37 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="keyCountSelect">تعداد کلید را انتخاب کتید</label>
+            <label for="keyCountSelect">:انتخاب تعداد کلید</label>
             <select id="keyCountSelect">
                 <option value="1">1</option>
                 <option value="5">5</option>
             </select>
         </div>
-        <button id="startBtn">ساخت کلید</button>
+        <button id="startBtn">ایجاد کلید</button>
 
         <div id="progressContainer" class="hidden">
             <div class="progress-bar">
                 <div id="progressBar"></div>
             </div>
             <p id="progressText">0%</p>
-            <p id="progressLog">... در حال ساخت کلید</p>
+            <p id="progressLog">... درحال شروع</p>
         </div>
 
         <div id="keyContainer" class="hidden">
             <h2 id="generatedKeysTitle" class="hidden">کلید های ساخته شده</h2>
             <div id="keysList"></div>
-            <button id="copyAllBtn" class="hidden">کپی تمام کلید ها</button>
+            <button id="copyAllBtn" class="hidden">کپی تمامی کلید ها</button>
         </div>
 
-        <p id="keyCountLabel">تعداد کلید ها</p>
+        <p id="keyCountLabel">:تعداد کلید ها</p>
 
-        <button id="generateMoreBtn">ساخت کلید های دیگر</button>
-        <button id="creatorChannelBtn">عضویت در کانال</button>
-        <p id="copyStatus" class="hidden">کد کلید با موفقیت کپی شد</p>
+        <button id="generateMoreBtn">ایجاد کلید های دیگر</button>
+        <button id="creatorChannelBtn">گروه پرسش و پاسخ</button>
+        <p id="copyStatus" class="hidden">Keys copied to clipboard!</p>
         
         <div class="footer">
-            <p>برای دریافت کلید های ویژه در کانال تلگرام عضو شوید</p>
-            <a href="https://t.me/AkhbarHamster" target="_blank">
-                <button>عضویت در کانال تلگرام</button>
-              </a>
+            <p>Disclaimer: This tool is for educational purposes only. Use responsibly.</p>
+            <button id="telegramChannelBtn">Check out Our Telegram Channel</button>
         </div>
     </div>
 
