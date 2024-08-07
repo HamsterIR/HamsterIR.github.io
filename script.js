@@ -44,11 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const keyCount = parseInt(keyCountSelect.value);
         const game = games[gameChoice];
 
-        keyCountLabel.innerText = `Number of keys: ${keyCount}`;
+        keyCountLabel.innerText = `تعداد کلید ها ${keyCount}`;
 
         progressBar.style.width = '0%';
         progressText.innerText = '0%';
-        progressLog.innerText = '... درحال شروع';
+        progressLog.innerText = 'Starting...';
         progressContainer.classList.remove('hidden');
         keyContainer.classList.add('hidden');
         generatedKeysTitle.classList.add('hidden');
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let i = 0; i < 11; i++) {
                 await sleep(EVENTS_DELAY * delayRandom());
                 const hasCode = await emulateProgress(clientToken, game.promoId);
-                updateProgress(7 / keyCount, '... درحال برقراری ارتباط');
+                updateProgress(7 / keyCount, '... درحال استخراج');
                 if (hasCode) {
                     break;
                 }
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 const key = await generateKey(clientToken, game.promoId);
-                updateProgress(30 / keyCount, '... درحال ساخت کلید');
+                updateProgress(30 / keyCount, 'Generating key...');
                 return key;
             } catch (error) {
                 alert(`Failed to generate key: ${error.message}`);
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         progressBar.style.width = '100%';
         progressText.innerText = '100%';
-        progressLog.innerText = 'Complete';
+        progressLog.innerText = 'کامل';
 
         startBtn.classList.remove('hidden');
         keyCountSelect.classList.remove('hidden');
@@ -153,15 +153,15 @@ document.addEventListener('DOMContentLoaded', () => {
         generatedKeysTitle.classList.add('hidden');
         copyAllBtn.classList.add('hidden');
         keysList.innerHTML = '';
-        keyCountLabel.innerText = 'Number of keys:';
+        keyCountLabel.innerText = ':تعداد کلید ها';
     });
 
     document.getElementById('creatorChannelBtn').addEventListener('click', () => {
-        window.open('https://telegram.me/Sam_Dm_bot', '_blank');
+        window.open('https://t.me/Airdrops_GP', '_blank');
     });
 
     telegramChannelBtn.addEventListener('click', () => {
-        window.open('https://telegram.me/Insta_Buy_Follower', '_blank');
+        window.open('https://t.me/AkhbarHamster', '_blank');
     });
 
     const generateClientId = () => {
