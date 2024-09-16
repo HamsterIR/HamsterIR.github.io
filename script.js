@@ -109,10 +109,10 @@ setInterval(myTimer, 1000);
 
 //what happens when button is clicked
 function clicked() {
-  if (one == 0){
-    load();
-    one = 1
-  }
+  money += moneyup;
+  document.getElementById("total").innerHTML = addcomma(money);
+  save();
+}
     else if (one == 1){
   money += moneyup;
   document.getElementById("total").innerHTML = addcomma(money);
