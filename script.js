@@ -16,12 +16,6 @@ workmax = 0;
 
 vaziat == 0;
 
-window.onload = function() {
-  if (vaziat == 1){
-    load();
-  }
-}
-
 //save before exiting
 function closingCode() {
   if (confirm("You have closed the window, would you like to save?") === true) {
@@ -116,7 +110,6 @@ function clicked() {
   money += moneyup;
   document.getElementById("total").innerHTML = "LB: " + addcomma(money);
   save();
-  vaziat = 1;
 }
 //upgrade function
 function upgrade(name) {
