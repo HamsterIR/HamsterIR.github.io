@@ -107,6 +107,7 @@ setInterval(myTimer, 1000);
 function clicked() {
   money += moneyup;
   document.getElementById("total").innerHTML = "LB: " + addcomma(money);
+  save();
 }
 //upgrade function
 function upgrade(name) {
