@@ -14,6 +14,8 @@ wboost = 1;
 catmax = 0;
 workmax = 0;
 
+one = 0;
+
 vaziat == 0;
 
 //save before exiting
@@ -107,9 +109,16 @@ setInterval(myTimer, 1000);
 
 //what happens when button is clicked
 function clicked() {
+  if (one == 0){
+    load();
+    one = 1
+  }
+    else if (one == 1){
   money += moneyup;
-  document.getElementById("total").innerHTML = "LB: " + addcomma(money);
+  document.getElementById("total").innerHTML = addcomma(money);
   save();
+
+    }
 }
 //upgrade function
 function upgrade(name) {
