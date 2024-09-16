@@ -22,10 +22,6 @@ function closingCode() {
   }
 }
 
-window.onload = function() {
-  load();
-};
-
 function addcomma(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
