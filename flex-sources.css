@@ -1,0 +1,244 @@
+.hidden {
+    display: none;
+}
+
+.r-2l {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 75%;
+  height: 100%;
+}
+.r-2l-top, .r-2l-top-txt {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 45%;
+}
+.sell-boxes {
+  position: absolute;
+  left: 5px;
+}
+.sell-btn {
+  cursor: pointer;
+  background-color: rgb(6, 141, 6);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 10px;
+  transition: 0.15s;
+}
+.sell-btn:hover {
+  transform: scale(1.03);
+}
+.sell-btn:active {
+  transform: scale(0.97);
+}
+.r-2l-top-txt {
+  padding-right: 10px;
+}
+.r-2l-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+
+}
+
+.r-2r {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 25%;
+  height: 100%;
+}
+.budget-container, .budget-container-js {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 90%;
+  height: 90%;
+  background-color: rgb(41, 41, 41);
+}
+
+.budget-container-js {
+  background-color: rgb(41, 41, 41);
+  justify-content: right;
+  position: relative;
+  width: 98%;
+  height: 90%;
+}
+.budget-container-js-txt-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  height: 28px;
+  width: 83%;
+  background-color: #333333;
+  margin-right: 5px;
+}
+.toman-label {
+  position: absolute;
+  font-size: 12px;
+  left: 5px;
+}
+
+.notification, .error-notif, .vip-notif{
+  position: absolute;
+  top: 167px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  display: flex;
+  padding: 5px 15px;
+  
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  
+  opacity: 0;
+  animation: fadeInOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0.75; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.classification-container {
+  position: relative;
+}
+
+.classification{
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: rgb(6, 141, 6);
+  font-size: 14px;
+  position: absolute;
+  left: 5px;
+  top: 35px;
+  border-radius: 4px;
+  padding: 2px 5px;
+  height: 40px;
+  transition: 0.15s;
+}
+.classification:hover {
+  transform: scale(1.03);
+}
+.classification:active {
+  transform: scale(0.97);
+}
+
+.capacity-label {
+  font-size: 14px;
+  position: absolute;
+  left: 14px;
+  top: 80px;
+  display: flex;
+}
+
+.error-notif {
+  background-color: rgb(196, 7, 7);
+}
+.vip-notif {
+  background: linear-gradient(45deg, #CFA500, #D68600);
+}
+
+.vip-container {
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  top: -20px;
+  right: 20px;
+  color: yellow;
+  background: linear-gradient(45deg, #CFA500, #D68600);
+
+
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+
+.vip-photo {
+  width: 80px;
+  height: 80px;
+  background-color: transparent;
+}
+.vip-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  padding: 0;
+  margin: 10px 0px 0px 0px;
+}
+
+.vip-account {
+  width: 35px;
+  height: 35px;
+  animation: pulse2 2s infinite ease-in-out;
+}
+
+.price-label {
+  font-size: 10px;
+  position: absolute;
+  background-color: rgb(85, 85, 85);
+  top: 5px;
+  right: 0;
+  transition: 0.15s;
+}
+.price-label:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+  margin-right: 6px;
+}
+.price-label:active {
+  transform: scale(1.6);
+  margin-right: 12px;
+}
+
+.vip-small-icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 5px;
+  top: 5px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.80);
+  }
+  50% {
+    transform: scale(0.85); /* بزرگتر شدن */
+  }
+  100% {
+    transform: scale(0.80);
+  }
+}
+
+@keyframes pulse2 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.90); /* بزرگتر شدن */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
