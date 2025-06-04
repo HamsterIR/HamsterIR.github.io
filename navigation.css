@@ -1,0 +1,53 @@
+.screen-bottom {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 160px;
+
+  gap: 6px;
+}
+
+.nav-card {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24%;
+  height: 160px;
+  background-color: #333333;
+  color: white;
+  border-radius: 9px;
+  overflow: hidden;
+}
+.card-top, .card-middle, .card-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+.card-top {
+  position: relative;
+  height: 100px;
+  height: 55%;
+}
+.card-middle {
+  font-size: 13px;
+  color: white;
+  background-color: #373737;
+  height: 15%;
+
+}
+.card-bottom {
+  background-color: #303030;
+  height: 30%;
+}
+.card-icon {
+  margin-top: 9px;
+  object-fit: cover;
+  width: 80px;
+  height: 80px;
+}
