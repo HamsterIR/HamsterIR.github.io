@@ -1,0 +1,13 @@
+.btn-buy {
+  cursor: pointer;
+  border: none;
+  background-color: greenyellow;
+  padding: 4px 25px;
+  border-radius: 5px;
+}
+.btn-buy:hover {
+  transform: scale(1.01);
+}
+.btn-buy:active {
+  transform: scale(0.99);
+}
