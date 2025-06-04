@@ -1,0 +1,21 @@
+.budget {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.15s;
+}
+
+@media (max-width: 665px) {
+  .budget {
+  width: 54px;
+  height: 54px;
+  }
+}
+
+@media (max-width: 578px) {
+  .budget {
+  width: 48px;
+  height: 48px;
+  }
+}
