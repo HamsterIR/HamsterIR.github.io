@@ -1,34 +1,194 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="fa">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
-
-    <title>محاسبه قیمت</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
     
-</head>
-<body>
-  <h1>محاسبه قیمت</h1>
-  <div id="button-container">
-    <button style="font-family: Vazirmatn, sans-serif;" id="button-1" value="45000" data-name="دسر لیوانی">دسر لیوانی <br> 45,000</button>
+    <link rel="stylesheet" href="CSS/general.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/flex-sources.css">
+    <link rel="stylesheet" href="CSS/items.css">
+    <link rel="stylesheet" href="CSS/navigation.css">
+    <link rel="stylesheet" href="CSS/buttons.css">
+    <link rel="stylesheet" href="CSS/extract.css">
+    <link rel="stylesheet" href="CSS/golden-text.css">
+    <link rel="stylesheet" href="CSS/vip-popup.css">
     
-    <button style="font-family: Vazirmatn, sans-serif;" id="button-2" value="200000" data-name="(لطیفه، شو، ناپلئون، زبان خامه ای)">لطیفه، شو<br>ناپلئون<br>زبان خامه ای<br>200,000</button>
-    <button style="font-family: Vazirmatn, sans-serif;" id="button-3" value="210000" data-name="رولت">رولت<br>210,000</button>
-    <button style="font-family: Vazirmatn, sans-serif;" id="button-4" value="220000" data-name="تر خالص">تر خالص<br>220,000</button>
-    <button style="font-family: Vazirmatn, sans-serif;" id="button-5" value="225000" data-name="تر مخلوط">تر مخلوط<br>225,000</button>
-    <button style="font-family: Vazirmatn, sans-serif;" id="button-6" value="235000" data-name="(مافن، میوه ای)">مافن، میوه ای<br>235,000</button>
-    <button style="font-family: Vazirmatn, sans-serif;" id="button-7" value="370000" data-name="پیچ انگشتی">پیچ انگشتی<br>370,000</button>
-    <button style="font-family: Vazirmatn, sans-serif;" id="button-8" value="170000" data-name="کشمشی">کشمشی<br>170,000</button>
-    <button style="font-family: Vazirmatn, sans-serif;" id="button-9" value="130000" data-name="(اهری، یزدی، روغنی)">اهری، یزدی، روغنی<br>130,000</button>
-    <button style="font-family: Vazirmatn, sans-serif;" id="button-10" value="180000" data-name="دانمارکی">دانمارکی<br>180,000</button>
-    <button style="font-family: Vazirmatn, sans-serif;" id="button-11" value="170000" data-name="مشهدی">مشهدی<br>170,000</button>
+    <title>Airdrop</title>
+  </head>
+  <body dir="rtl" >
+    <div class="screen">
 
+      <div class="container">
 
-    <button style="font-family: Vazirmatn, sans-serif;" id="calculate-button">میانگین</button>
-    <button style="background-color: #BA0021; font-family: Vazirmatn, sans-serif;" id="clear-button">حذف</button>
-  </div>
-  <p id="result"></p>
+        <div class="header">
 
-  <script src="script.js"></script>
-</body>
+          <div id="app-name" class="right-side">
+            <img class="hamburger-menu " src="images/icons/hamburger-menu.svg">
+            <p class="header-title">
+              تخم مرغ امپایر
+            </p>
+          </div>
+
+          <div class="left-side">
+            <div class="gem-container">
+              <div class="gem-icon-container">
+                <div><img class="gem-icon" src="images/game ui/green-diamond.png"></div>
+              </div>
+              <div class="gem-qty">۲۵</div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="full-screen">
+
+          <div class="screen-top">
+            <!-- Budget -->
+            <div class="screen-top-right">
+              <div class="r-2r">
+                <div class="budget-container"><img class="budget" src="images/game ui/irr-webp.webp"></div>
+              </div>
+              
+              <div class="r-2l">
+                <div class="r-2l-top"><p class="r-2l-top-txt">بودجه کل</p></div>
+                <div class="r-2l-bottom">
+                  <div class="budget-container-js" id="content">
+                    <div class="budget-container-js-txt-container" id="money">1234567890</div>
+                    
+                    <div class="toman-label">تومان</div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Eggs -->
+            </div>
+            <div class="screen-top-left">
+              <div class="r-2r">
+                <div class="budget-container"><img class="budget" src="images/game ui/boxes.webp"></div>
+              </div>
+              
+              <div class="r-2l">
+                <div class="r-2l-top"><p class="r-2l-top-txt">بسته های موجود</p>
+                <div class="sell-boxes">
+                  <button class="sell-btn" id="sell-box" onclick="sellBox();">فروش</button>
+                </div>
+                </div>
+                <div class="r-2l-bottom">
+                  <div class="budget-container-js" id="content">
+                    <div class="budget-container-js-txt-container" id="boxes"></div>
+                    
+                    <div class="toman-label" style="padding-left: 5px;">عدد</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="notification"></div>
+          <div id="error-notif"></div>
+          <div id="vip-notif"></div>
+
+          <div class="screen-center">
+            <div id="vip-card" onclick="togglePopup(true)" class="vip-container">
+              <img class="vip-photo" src="images/game ui/VIP-PASS.webp" alt="">
+              <div><p class="vip-text ">خرید اشتراک</p></div>
+            </div>
+            <img class="btn-airdrop" src="images/game ui/level1.webp" id="airdrop" onclick="
+              collectEggs();
+            ">
+          </div>
+
+          <div class="label-container">
+            <div class="qty-label">
+              <div class="qty-label-top"><h1 class="with-shadow">تخم مرغ های جمع آوری شده</h1></div>
+
+                <div class="qty-label-bottom" id="eggs"></div>
+
+                <button onclick="classification();" class="classification">بسته بندی</button>
+                <div class="capacity-label">100/100</div>
+              
+            </div>
+          </div>
+
+          <div class="screen-bottom"  id="content-nav">
+            <div class="nav-card">
+              <div class="card-top">
+                <div class="price-label">۷۰۰,۰۰۰</div>
+                <div><img class="card-icon" src="images/game ui/nav-chicken.webp"></div>
+              </div>
+
+              <div class="card-middle">
+                <p id="chickens">تعداد: 1</p>
+              </div>
+
+              <div class="card-bottom">
+                <button class="btn-buy" onclick="buyChicken();">خرید</button>
+              </div>
+            </div>
+
+            <div class="nav-card">
+              <div class="card-top">
+                <div class="price-label">۱۰۰,۰۰۰,۰۰۰</div>
+                <div><img class="card-icon" src="images/game ui/nav-warehouse.webp"></div>
+              </div>
+              
+              <div class="card-middle">
+                <p id="warehouse">سطح: 1</p>
+              </div>
+
+              <div class="card-bottom">
+                <button onclick="upgradeWarehouse();" class="btn-buy">ارتقا</button>
+              </div>
+            </div>
+
+            <div class="nav-card">
+              <div class="card-top">
+                <div class="price-label">۲۰,۰۰۰,۰۰۰</div>
+                <div><img class="card-icon" src="images/game ui/nav-cargo-vehicle1.webp"></div>
+              </div>
+              
+              <div class="card-middle">
+                <p id="vehicle">تعداد: 1</p>
+              </div>
+
+              <div class="card-bottom">
+                <button onclick="vehicle();" class="btn-buy">خرید</button>
+              </div>
+            </div>
+
+            <div class="nav-card">
+              <div class="card-top">
+                <div>
+                  <img class="vip-small-icon" src="images/icons/icon-vip.webp" alt="">
+                </div>
+                <div class="price-label" style="padding: 0px 5px;">رایگان</div>
+                <div><img class="card-icon" src="images/game ui/nav-delivery-man.webp"></div>
+              </div>
+              
+              <div id="workerTitle" class="card-middle">
+                کارمند:
+                <span style="color: #e93532; padding-right: 5px;">غیرفعال</span>
+              </div>
+
+              <div class="card-bottom">
+                <button id="workerButton" onclick="workerActivator();" class="btn-buy">استخدام</button>
+              </div>
+            </div>
+
+          </div>
+          
+
+        </div>
+      </div>
+    </div>
+
+    <script src="JavaScript/backend.js"></script>
+
+  </body>
 </html>
