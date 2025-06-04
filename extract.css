@@ -1,0 +1,35 @@
+.label-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*border: 1px solid white;*/
+  color: white;
+  width: 100%;
+  height: 120px;
+}
+
+.qty-label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 50%;
+  height: 100px;
+
+  overflow: hidden;
+}
+.qty-label-top, .qty-label-bottom {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  background-color: #202020;
+}
+.qty-label-bottom {
+  font-family: Vazirmatn;
+  font-size: 25px;
+  background-color: #2F2F2F;
+  height: 70px;
+}
